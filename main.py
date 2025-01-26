@@ -102,7 +102,6 @@ st.set_page_config(
    page_icon="🛰️",
    layout="wide",
    initial_sidebar_state="expanded",
-   theme="light",
 )
 with st.container():
     st.markdown("<h1 style='text-align: center;'>PySolar - A Real-Time Interactive Solar System</h1>", unsafe_allow_html=True)
