@@ -46,7 +46,7 @@ def get_orbit(planet):
 
 
 # Create plot
-fig, ax = plt.subplots(figsize=(8, 8), facecolor="black")  # Adjusted figsize
+fig, ax = plt.subplots(figsize=(13,8), facecolor="black")  # Adjusted figsize
 plt.axis("equal")
 
 # Plot planets
@@ -97,18 +97,24 @@ fig.canvas.mpl_connect('scroll_event', on_scroll)
 ax.legend(labelspacing=1.5, borderpad=1)
 
 # Show on Streamlit
-st.title('PySolar - A Real-Time Interactive Solar System')
-st.write('Use the tools at the bottom of the graph to zoom in and out')
+st.set_page_config(
+   page_title="PySolar - A Real-Time Interactive Solar System",
+   page_icon="🛰️",
+   layout="wide",
+   initial_sidebar_state="expanded",
+)
+with st.container():
+    st.markdown("<h1 style='text-align: center;'>PySolar - A Real-Time Interactive Solar System</h1>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center;'>Use the tools at the bottom of the graph to zoom in and out</p>", unsafe_allow_html=True)
+    time_placeholder = st.empty()
 
-# Create placeholder for time update
-time_placeholder = st.empty()
 
-# Create and display plot
+
+# Show graph
 html = mpld3.fig_to_html(fig)
-components.html(html, height=900, width=900)  # Adjusted height for better view
+components.html(html, height=900, width=1300)  # Adjusted height for better view
 
-# Update the time every second
 while True:
     current_time = datetime.now()
-    time_placeholder.write(current_time)
-    time.sleep(1)  # Update every second
+    time_placeholder.markdown(f"<p style='text-align: center; background-color: #f8f9fb; border-radius: 5em; color: #09ab3b;'>{current_time}</p>", unsafe_allow_html=True)
+    time.sleep(1) 
