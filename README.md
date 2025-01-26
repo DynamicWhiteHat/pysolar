@@ -1,8 +1,9 @@
+## Update: Now hosted online using Streamlit. Visit: https://pysolar.streamlit.app/
+
 # pysolar
  - A simple real-time solar system viewer written 100% in Python
  - Uses the Skyfield library to pull data from JPL's Development Ephemeris series de440s.bsp file, which includes data from 1849 to 2150
  - Displays the system in a scrollable matplotlib window
-## Update: Now hosted online using Streamlit. Visit: https://pysolar.streamlit.app/
 
 # Usage
 - Locally:
