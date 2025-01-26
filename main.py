@@ -105,7 +105,7 @@ st.set_page_config(
 )
 with st.container():
     st.markdown("<h1 style='text-align: center;'>PySolar - A Real-Time Interactive Solar System</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center;'>Use the tools at the bottom of the graph to zoom in and out</p>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center;'>Use the tools at the bottom left of the graph to zoom in and out</p>", unsafe_allow_html=True)
     time_placeholder = st.empty()
 
 
